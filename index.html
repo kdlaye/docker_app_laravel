@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Hébergeur d'Applications</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+
+
+        .feature {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .feature img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Cacher le champ d'upload par défaut */
+        #fileInput {
+            display: none;
+        }
+
+        /* Style du bouton personnalisé */
+        #customButton {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        section {
+            position: relative;
+            height: 500px;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .banner-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #f7fafc;
+            z-index: 1;
+        }
+
+        .banner-content h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .banner-content p {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .banner-content a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #2d3748;
+            color: #cbd5e0;
+            border-radius: 0.25rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .banner-content a:hover {
+            background-color: #4a5568;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Mon Hébergeur</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#fonctionnalite">Fonctionnalités</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <section>
+        <video autoplay muted loop>
+            <source src="vid2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="banner-content">
+            <h1 class="display-4">Hébergez vos applications en toute simplicité</h1>
+            <p class="lead">Notre service d'hébergement offre des performances exceptionnelles et une sécurité de pointe
+                pour vos applications.</p>
+
+
+            <a class="btn btn-primary btn-lg" href="#" role="button"> <!-- Bouton d'upload personnalisé -->
+                <label for="fileInput" id="customButton">Choisir un fichier</label>
+                <input type="file" id="fileInput" accept="*" style="display:none">
+
+                <!-- Affichage des données -->
+                <div id="paymentData"></div>
+            </a>
+
+
+        </div>
+    </section>
+
+
+
+    <!-- Features -->
+    <div class="container feature" id="fonctionnalite">
+        <div class="row">
+            <div class="col-lg-4">
+                <img src="img3.jpg" alt="Feature 1">
+                <h3>Fonctionnalité 1</h3>
+                <p>Une description concise de la fonctionnalité offerte.</p>
+            </div>
+            <div class="col-lg-4">
+                <img src="img2.jpg" alt="Feature 2">
+                <h3>Fonctionnalité 2</h3>
+                <p>Une description concise de la fonctionnalité offerte.</p>
+            </div>
+            <div class="col-lg-4">
+                <img src="img3.jpg" alt="Feature 3">
+                <h3>Fonctionnalité 3</h3>
+                <p>Une description concise de la fonctionnalité offerte.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Mon Hébergeur d'Applications. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+    <script>
+
+        function displayPaymentData(data) {
+            var tableHtml = '<table>';
+            for (var i = 0; i < data.length; i++) {
+                tableHtml += '<tr>';
+                for (var j = 0; j < data[i].length; j++) {
+                    if (i === 0) {
+                        tableHtml += '<th>' + data[i][j] + '</th>';
+                    } else {
+                        tableHtml += '<td>' + data[i][j] + '</td>';
+                    }
+                }
+                tableHtml += '</tr>';
+            }
+            tableHtml += '</table>';
+
+            paymentDataDiv.innerHTML = tableHtml;
+        }
+    </script>
+</body>
+
+</html>
